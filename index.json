@@ -1,57 +1,49 @@
 {
-  "updated": "2026-07-24T08:41:04.868Z",
+  "updated": "2026-07-25T03:00:04.653Z",
   "week": [
     {
-      "day": "Maanantai 20.7.2026",
+      "day": "Maanantai 27.7.2026",
       "menu": [
-        "Yrttinen tomaattikeitto (L+G) krutongit (VE)",
-        "Uunissa paahdettua lohta sitruunaisella basilikapestolla (L+G) varhaisperunaa (VE+G)",
-        "Mehevää kanan paistileikettä hollandaisekastikkeessa (L+G) basmatiriisi (VE+G)",
-        "Täyteläinen carbonarakastike (L+VS+G) Rummo-spaghetti (M) parmesaanilastut (VL+G)",
-        "Chilimarinoitua tofua täyteläisessä Tikka Masala -kastikkeessa tuoreella korianterilla (VE+G)",
-        "Mustikka-vadelmakakku (L) vaniljakastike (L+G)"
+        "Kermainen curry-kanakeitto (L+VS+G)",
+        "Uunilohta sitruuna-smetanakastikkeessa (L+G) keitetyt perunat (VE+G)",
+        "Paneroidut kanan fileebitesit (L+G) mango-currydippi (VE+G) basmatiriisi (VE+G)",
+        "Rapeat kukkakaaliwingsit (VE+G) mango-currydippi (VE+G)",
+        "Kesäinen hedelmäsalaatti (VE+G) minttuvaahto (L+G)"
       ]
     },
     {
-      "day": "Tiistai 21.7.2026",
+      "day": "Tiistai 28.7.2026",
+      "menu": []
+    },
+    {
+      "day": "Keskiviikko 29.7.2026",
       "menu": [
-        "Vuohenjuustolla höystetty punajuurikeitto (VL+G) krutongit (VE)",
-        "Factoryn unkarilaiset lihapullat kermaisessa savupaprika-kastikkeessa (L+G) paahdetut rosmariiniperunat (VE+G)",
-        "Buffalo-kastikkeella maustettuja kanan wingsejä (M+G+VS) basmatiriisi (VE+G)",
-        "Itse tehdyt pinaattiohukaiset (L) puolukkahillo (VE+G)",
-        "Paistettua parsakaalia ja kukkakaalia kikherneillä ja sitrusvinegretillä (VE+G)",
-        "Factoryn jäätelöbaari (L+G)"
+        "Koskenlaskijan lohikeitto (L+G)",
+        "Ylikypsää porsaankylkeä teriyaki-glaseerauksella ja tuoreella korianterilla (M+VS+G) basmatiriisi (VE+G)",
+        "Rapea kanan cordon bleu (VL) ranch-dippi (VE+G) ranskalaiset (VE+G)",
+        "Soijarouheella täytetyt paprikat herneenversoilla (VE+G)",
+        "Mustikkapiirakka (L) vaniljakastike (L+G)"
       ]
     },
     {
-      "day": "Keskiviikko 22.7.2026",
-      "menu": [
-        "Purjo-perunasosekeitto (L+G)",
-        "Rapeaksi paistetut porsaan ribsit whiskey- BBQ-kastikkeella (M+G) uunissa paahdetut lohkoperunat (VE+G)",
-        "Ruisjauhotetut voissa paistetut muikut (L) yrtti-kermaviilikastike (L+G)",
-        "Falafel pyöryköitä kasvis-pinaattipedillä (VE+G+VS) raikasta vegaanista tzatzikia (VE+VS+G) basmatiriisi (VE+G)",
-        "Raikasta mansikkarahkaa limellä ja mintulla (L+G)"
-      ]
-    },
-    {
-      "day": "Torstai 23.7.2026",
+      "day": "Torstai 30.7.2026",
       "menu": [
         "Savupotka-hernekeitto (M+G) pilkottua sipulia (VE+G)",
-        "Kanan rintafilettä raikkaalla mango-curry -kastikkeella (L+G) basmatiriisi (VE+G)",
-        "Mehevää porsaan ulkofilettä kermaisessa cheddarkastikkeessa (L+G) kermaperunat (L+G)",
-        "Vegaanista kasvis-currya kookoksella ja kaura-kasvissuikaleilla (VE+G+VS)",
+        "Kanan sisäfilettä kanttarellikastikkeessa (L+G) basmatiriisi (VE+G)",
+        "Rapeaa tempura seitiä (L) remoulade (M+G) varhaisperunat (VE+G)",
+        "Butter-kastike tuoreilla kasviksilla ja Gold &amp; Green -suikaleilla (VE+G+VS) basmatiriisi (VE+G)",
         "Factoryn letut (L) mansikkahillo (VE+G) vaniljavaahto (L+G) jäätelö (L+G)",
         "Gluteenittomat letut ja vegaaniset letut (VE+G) (Pyydetään erikseen keittiöstä)"
       ]
     },
     {
-      "day": "Perjantai 24.7.2026",
+      "day": "Perjantai 31.7.2026",
       "menu": [
-        "Pinaattikeitto (L+G) keitettyä kananmunaa",
-        "Rapeaa paneroitua kanan sisäfileetä (L) Aurajuustodippi (L+G) basmatiriisi (VE+G)",
-        "Ranskalainen burgundin lihapata haudutettuna punaviinissä (M+G+VS) keitetyt perunat (VE+G)",
-        "Värikäs kasvisratatouille mehevällä Härkiksellä, tuoreita yrttejä ja chiliä (VE+G+VS)",
-        "Talon tiramisu (L)"
+        "Juustoinen kesäkeitto (L+G)",
+        "Paneroitua porsaanleikettä (L) kurkku-paprikamajoneesi (M+G) lohkoperunat (VE+G)",
+        "Butter Chicken (L+G+VS) kurkkuraita (L+G) basmatiriisi (VE+G)",
+        "Nuudeliwokki tuoreilla kasviksilla ja rapealla chili-tofulla (VE+VS)",
+        "Appelsiini-suklaamousse (L+G)"
       ]
     }
   ]

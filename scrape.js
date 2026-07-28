@@ -24,7 +24,7 @@ async function getLunch() {
       return;
     }
 
-    const nextP = $(el).nextAll("p").first();
+    const nextP = $(el).nextAll("p").filter((_, p) => $(p).text().trim().length > 0).first();
 
     if (!nextP.length) {
       console.log("⚠️ Ei löytynyt <p> elementtiä:", title);

@@ -1,15 +1,18 @@
 name: Update menu (github)
 
+# Varajärjestelmä: on-prem-kone (automation.sh) päivittää listan ensisijaisesti
+# arkiaamuisin klo 6–10 Suomen aikaa. Tämä ajo käynnistyy vasta sen jälkeen ja
+# tekee jotain vain, jos tämän päivän lista puuttuu vielä repostä.
 on:
-  push:
-    branches:
-      - main
   schedule:
-    - cron: "12 3-7 * * 0-6"
+    - cron: "23 8-11 * * 1-5" # UTC
   workflow_dispatch:
 
 permissions:
   contents: write
+
+concurrency:
+  group: update-menu
 
 jobs:
   build:
@@ -18,21 +21,37 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+      - name: Check if today's menu is already in repo
+        id: check
+        run: |
+          today=$(TZ=Europe/Helsinki date +'%-d.%-m.%Y')
+          if jq -e --arg today "$today" \
+              'any(.week[]; (.day | endswith($today)) and (.menu | length > 0))' index.json > /dev/null; then
+            echo "Today's menu ($today) already present, nothing to do."
+            echo "done=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - if: steps.check.outputs.done != 'true'
+        uses: actions/setup-node@v4
         with:
           node-version: 24
 
-      - run: npm install
-      - run: node scrape.js
+      - if: steps.check.outputs.done != 'true'
+        run: npm install
+
+      - if: steps.check.outputs.done != 'true'
+        run: node scrape.js > /dev/null
 
       - name: Commit changes
+        if: steps.check.outputs.done != 'true'
         run: |
+          if git show HEAD:index.json | jq -S 'del(.updated)' | cmp -s - <(jq -S 'del(.updated)' index.json); then
+            echo "Menu unchanged (only timestamp), not committing."
+            exit 0
+          fi
+
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-
-          git add -A
-
-          # pakotetaan commit vaikka Git ei huomaisi muutosta
-          git commit -m "update menu $(date +'%Y-%m-%d %H:%M:%S')" || echo "commit failed"
-
-          git push --force
+          git add index.json
+          git commit -m "update menu $(TZ=Europe/Helsinki date +'%Y-%m-%d %H:%M:%S')"
+          git push

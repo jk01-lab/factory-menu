@@ -1,16 +1,14 @@
 const axios = require("axios");
 const cheerio = require("cheerio");
 const fs = require("fs");
+const { isDeepStrictEqual } = require("node:util");
 
 async function getLunch() {
   const url = "https://ravintolafactory.com/lounasravintolat/ravintolat/factory-virtatalo/";
   const { data } = await axios.get(url);
   const $ = cheerio.load(data);
 
-  const result = {
-    updated: new Date().toISOString(),
-    week: []
-  };
+  const week = [];
 
   console.log("🔍 Käydään H3 elementit läpi...");
 
@@ -50,12 +48,28 @@ async function getLunch() {
 
     console.log("✅ Päivä parsittu:", title, items.length, "riviä");
 
-    result.week.push({
+    week.push({
       day: title,
       menu: items
     });
   });
 
+  let previous;
+  try {
+    previous = JSON.parse(fs.readFileSync("index.json", "utf8"));
+  } catch (error) {
+    if (error.code !== "ENOENT" && !(error instanceof SyntaxError)) {
+      throw error;
+    }
+  }
+
+  const { updated, ...previousContent } = previous ?? {};
+  if (typeof updated === "string" && isDeepStrictEqual(previousContent, { week })) {
+    console.log("Lounaslista ennallaan, tiedostoa ei päivitetä.");
+    return;
+  }
+
+  const result = { updated: new Date().toISOString(), week };
   console.log("📦 LOPPUTULOS:");
   console.log(JSON.stringify(result, null, 2));
 
